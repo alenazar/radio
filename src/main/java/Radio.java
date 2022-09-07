@@ -1,10 +1,25 @@
 public class Radio {
 
-    private int volume = 5;
-    private int station = 5;
+    private int maxVolume = 100;
+    private int minVolume = 0;
+    private int volume = minVolume;
+
+    private int maxStation = 9;
+    private int minStation = 0;
+    private int station = minStation;
+
+    public Radio (int minVolume, int maxVolume, int minStation, int maxStation){
+        this.minVolume = minVolume;
+        this.maxVolume = maxVolume;
+        this.volume = minVolume;
+
+        this.minStation = minStation;
+        this.maxStation = maxStation;
+        this.station = minStation;
+    }
 
     public void setUpVolume() {
-        if (volume < 10) {
+        if (volume < 100) {
             volume++;
         }
     }
